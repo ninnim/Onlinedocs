@@ -61,6 +61,8 @@ paths:
     $ref: paths/pathItem.yaml
   /pathItemWithExamples:
     $ref: paths/pathItemWithExamples.yaml
+  /inquiry:
+    $ref: paths/inquiry.yaml
 components:
   securitySchemes:
     main_auth:
