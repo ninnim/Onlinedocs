@@ -1,15 +1,6 @@
 function myFunction() {
-  alert("Hello! I am an alert box!");
-};
-
-const myObject = {
-  firstName:"John",
-  lastName: "Doe",
-  fullName: function() {
-    return this.firstName + " " + this.lastName;
-  }
+  document.getElementById("demo").innerHTML = "I have changed!";
 }
-document.getElementById("demo").innerHTML = myObject.fullName();
 
 // function validateForm() {
 //   var name = document.getElementById("name").value;
