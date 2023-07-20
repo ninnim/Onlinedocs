@@ -51,7 +51,7 @@ servers:
       tenant:
         default: www
         description: Your tenant id
-  - url: https://example.com/api/v1
+  - url: https://bankapi-demo.bill24.net/payment/inquiry
 paths:
   /users/{username}:
     $ref: paths/users_{username}.yaml
