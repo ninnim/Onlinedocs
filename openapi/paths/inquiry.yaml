@@ -4,7 +4,7 @@ post:
   summary: Operation summary
   description: |
     Operation description **Markdown**.
-  operationId: operationId
+  operationId: inquiry
   security:
     - api_key: []
     - basic_auth: []
