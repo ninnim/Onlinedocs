@@ -1,9 +1,10 @@
 post:
   tags:
-    - qr/verify
-  summary: Operation summary
+    - Verify bill/ transaction
+  summary: qr/v2/verify
   description: |
-    Operation description **Markdown**.
+    **Acquiring Bank / Issuing Bank** able to verify bill before submit payment or verify transaction after payment.
+    
   operationId: qr/verify
   security:
     - api_key: []

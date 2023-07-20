@@ -1,9 +1,11 @@
 post:
   tags:
-    - qr/v2/confirm
-  summary: Operation summary
+    - Submit payment
+  summary: qr/v2/confirm
   description: |
-    Operation description **Markdown**.
+    Acquiring Bank need to submit payment to Bill24 system after received payment instruction from Payment Network.
+    Issuing Bank able to submit payment to Bill24 system before send payment instruction to Payment Network (optional).
+    
   operationId: qr/v2/confirm
   security:
     - api_key: []
