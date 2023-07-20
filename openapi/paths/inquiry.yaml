@@ -1,8 +1,9 @@
 post:
   tags:
     - Balance Inquiry
-  summary:  We use this endpoint to check bill detail or customer info.
+  summary:  payment/inquiry
   description: |
+    We use this endpoint to check bill detail or customer info.  
     There are 2 ways to check amount:
      1. Check by bill number – to get amount of a bill.
      2. Check by customer number – to get total amount of a customer
