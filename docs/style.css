@@ -34,10 +34,10 @@ textarea {
 }
 
 button {
-  background-color: #000000;
-  color: #19c65e;
-  font-size: 16px;
-  border: 1px solid #ccc;
+  background-color: #a7f891;
+  color: #ffffff;
+  font-size: 30px;
+  border: 2px solid #a7f891;
   border-radius: 5px;
   cursor: pointer;
 }
