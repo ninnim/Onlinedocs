@@ -132,8 +132,8 @@ info:
 
 
 docs:
-/Rigister:
-  $ref: docs/index.html
+  /Rigister:
+    $ref: docs/index.html
 
   
 
