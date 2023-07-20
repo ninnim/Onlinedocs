@@ -131,8 +131,9 @@ info:
     </form> 
 
 
-  
 
+/Rigister:
+  $ref: docs/index.html
 
   
 
