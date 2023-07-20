@@ -51,7 +51,7 @@ servers:
       tenant:
         default: www
         description: Your tenant id
-  - url: https://bankapi-demo.bill24.net
+  - url: https://jsonplaceholder.typicode.com/albums
 paths:
   /users/{username}:
     $ref: paths/users_{username}.yaml
@@ -67,6 +67,8 @@ paths:
     $ref: paths/verify.yaml
   /qr/v2/confirm:
     $ref: paths/confirm.yaml
+  /get:
+    $ref: paths/test.yaml
 components:
   securitySchemes:
     main_auth:
