@@ -81,24 +81,13 @@ info:
 
     <h2>HTTP 2XX status codes</h2>
 
+    | STATUS CODE | DESCRIPTION |
 
-    | STATUS CODE  | DESCRIPTION |
+    |---|---|
 
+    | **200 **OK | The request succeed | Value 3 |
 
-    | **200 **OK   | The request succeed.|
-
-
-    | **201** Created | The request succeed and a resource was created.|
-
-
-
-    | Column 1 | Column 2 | Column 3 |
-
-    |---|---|---|
-
-    | Value 1 | Value 2 | Value 3 |
-    
-    | Value 4 | Value 5 | Value 6 |
+    | **201** Created | The request succeed and a resource was created. |
 
 
 
