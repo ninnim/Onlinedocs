@@ -54,14 +54,14 @@ servers:
         description: Your bankapi id
   - url: https://bankapi-demo.bill24.net
 paths:
-  /users/{username}:
-    $ref: paths/users_{username}.yaml
-  /echo:
-    $ref: paths/echo.yaml
-  /pathItem:
-    $ref: paths/pathItem.yaml
-  /pathItemWithExamples:
-    $ref: paths/pathItemWithExamples.yaml
+  # /users/{username}:
+  #   $ref: paths/users_{username}.yaml
+  # /echo:
+  #   $ref: paths/echo.yaml
+  # /pathItem:
+  #   $ref: paths/pathItem.yaml
+  # /pathItemWithExamples:
+  #   $ref: paths/pathItemWithExamples.yaml
   /payment/inquiry:
     $ref: paths/inquiry.yaml
   /qr/verify:
