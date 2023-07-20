@@ -63,8 +63,6 @@ paths:
     $ref: paths/pathItem.yaml
   /pathItemWithExamples:
     $ref: paths/pathItemWithExamples.yaml
-  /payment:
-    $ref: paths/payment.yaml
 components:
   securitySchemes:
     main_auth:
