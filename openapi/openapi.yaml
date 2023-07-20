@@ -83,15 +83,23 @@ info:
 
 
     | STATUS CODE | Description |
+
     |---|---|
+
     | **200 **OK | The request succeed. |
+
     | **201** Created | The request succeed and a resource was created. |
 
 
+
     | Status | ddd |
+
     |---|---|
+
     |ddd|ddd|
+
     |ddd|ddd|
+    
 
 
 
