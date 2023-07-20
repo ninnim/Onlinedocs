@@ -12,7 +12,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: ../components/schemas/verify.yaml
+          $ref: ../components/schemas/confirm.yaml
     description: requestBody description
     required: true
   responses:
@@ -29,6 +29,6 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/verify.yaml
+            $ref: ../components/schemas/confirm.yaml
     '400':
       $ref: ../components/responses/Problem.yaml
