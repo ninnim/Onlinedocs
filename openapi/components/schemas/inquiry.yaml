@@ -5,6 +5,7 @@ properties:
     type: string
     minLength: 4
     example: 2035-333333
+    required: true
   customer_code:
     description: custoemr code or customer id
     type: string
