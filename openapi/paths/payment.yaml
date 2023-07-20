@@ -1,0 +1,10 @@
+openapi: 3.0.0
+
+paths:
+  /users:
+    get:
+      operationId: getUsers
+      method: GET
+    post:
+      operationId: createUser
+      method: POST
