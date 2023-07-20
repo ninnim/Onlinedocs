@@ -4,7 +4,7 @@ parameters:
     description: Pretty print response
     schema:
       type: boolean
-get:
+post:
   tags:
     - User
   summary: Get user by user name
