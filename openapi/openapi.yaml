@@ -39,7 +39,7 @@ info:
     interfaces have done for lower-level programming, OpenAPI removes the
     guesswork in calling the service.
 tags:
-  - name: Balance Inquiry
+  - name: Echo
     description: Example echo operations.
   - name: User
     description: Operations about users.
@@ -51,9 +51,9 @@ servers:
       tenant:
         default: www
         description: Your tenant id
-  - url: https://bankapi-demo.bill24.net
+  - url: https://example.com/api/v1
 paths:
-  /payment/inquiry:
+  /users/{username}:
     $ref: paths/users_{username}.yaml
   /echo:
     $ref: paths/echo.yaml
