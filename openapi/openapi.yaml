@@ -45,13 +45,15 @@ tags:
     description: Operations about users.
   - name: Tag
     description: This is a tag description.
+  - name: payment
+    description: Process payment.
 servers:
   - url: https://{tenant}/api/v1
     variables:
       tenant:
         default: www
         description: Your tenant id
-  - url: https://example.com/api/v1
+  - url: https://bankapi-demo.bill24.net
 paths:
   /users/{username}:
     $ref: paths/users_{username}.yaml
@@ -61,6 +63,8 @@ paths:
     $ref: paths/pathItem.yaml
   /pathItemWithExamples:
     $ref: paths/pathItemWithExamples.yaml
+  /payment:
+    $ref: paths/payment.yaml
 components:
   securitySchemes:
     main_auth:
