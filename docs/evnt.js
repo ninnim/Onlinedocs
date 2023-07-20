@@ -1,28 +1,30 @@
-function validateForm() {
-  var name = document.getElementById("name").value;
-  var email = document.getElementById("email").value;
-  var subject = document.getElementById("subject").value;
-  var message = document.getElementById("message").value;
+alert("tttt");
 
-  if (name == "") {
-    alert("Please enter your name.");
-    return false;
-  }
+// function validateForm() {
+//   var name = document.getElementById("name").value;
+//   var email = document.getElementById("email").value;
+//   var subject = document.getElementById("subject").value;
+//   var message = document.getElementById("message").value;
 
-  if (email == "") {
-    alert("Please enter your email address.");
-    return false;
-  }
+//   if (name == "") {
+//     alert("Please enter your name.");
+//     return false;
+//   }
 
-  if (subject == "") {
-    alert("Please enter a subject.");
-    return false;
-  }
+//   if (email == "") {
+//     alert("Please enter your email address.");
+//     return false;
+//   }
 
-  if (message == "") {
-    alert("Please enter your message.");
-    return false;
-  }
+//   if (subject == "") {
+//     alert("Please enter a subject.");
+//     return false;
+//   }
 
-  return true;
-}
+//   if (message == "") {
+//     alert("Please enter your message.");
+//     return false;
+//   }
+
+//   return true;
+// }
