@@ -1,0 +1,12 @@
+type: object
+properties:
+  khqr_string:
+    description: khr string generate by merchant
+    type: string
+    minLength: 4
+    example: 000201010212303400zmkbkhppxxx@amkb01032340203AMK520449005802KH5916សហ#$សស%ហ&eថ ក6010Phnom Penh540820400.0053031165502025603400622305092340005450706Bill2463044C97
+  ref_no:
+    description: bank reference or transaction id
+    type: string
+    minLength: 1
+    example: 1122dddd
