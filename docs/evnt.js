@@ -1,6 +1,6 @@
-function myFunction() {
-  document.getElementById("demo").innerHTML = "I have changed!";
-}
+// function myFunction() {
+//   document.getElementById("demo").innerHTML = "I have changed!";
+// }
 
 // function validateForm() {
 //   var name = document.getElementById("name").value;
