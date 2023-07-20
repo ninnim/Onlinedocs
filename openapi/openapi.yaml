@@ -131,10 +131,6 @@ info:
     </form> 
 
 
-docs:
-  /Rigister:
-    $ref: docs/index.html
-
   
 
 # tags:
