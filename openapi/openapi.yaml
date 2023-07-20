@@ -52,29 +52,1463 @@ servers:
         default: www
         description: Your tenant id
   - url: https://example.com/api/v1
+tags:
+  - name: default
+    description: Default namespace
+  - name: QR
+    description: ''
+  - name: Payment
+    description: ''
+  - name: Item
+    description: ''
 paths:
-  /users/{username}:
-    $ref: paths/users_{username}.yaml
-  /echo:
-    $ref: paths/echo.yaml
-  /pathItem:
-    $ref: paths/pathItem.yaml
-  /pathItemWithExamples:
-    $ref: paths/pathItemWithExamples.yaml
-components:
-  securitySchemes:
-    main_auth:
-      type: oauth2
-      flows:
-        implicit:
-          authorizationUrl: http://example.com/api/oauth/dialog
-          scopes:
-            read:users: read users info
-            write:users: modify or remove users
-    api_key:
-      type: apiKey
-      in: header
-      name: api_key
-    basic_auth:
-      type: http
-      scheme: basic
+  /item:
+    post:
+      tags:
+        - Item
+      responses:
+        '201':
+          description: Success
+          schema:
+            $ref: '#/definitions/ViewResponse'
+      parameters:
+        - required: true
+          in: body
+          name: payload
+          schema:
+            $ref: '#/definitions/Category Id'
+        - description: An optional fields mask
+          format: mask
+          type: string
+          name: X-Fields
+          in: header
+      operationId: post_view_category_resource
+  /item/category:
+    post:
+      tags:
+        - Item
+      responses:
+        '201':
+          description: Success
+          schema:
+            $ref: '#/definitions/ListResponse'
+      parameters:
+        - required: true
+          in: body
+          name: payload
+          schema:
+            $ref: '#/definitions/Biller Code'
+        - description: An optional fields mask
+          format: mask
+          type: string
+          name: X-Fields
+          in: header
+      operationId: post_list_category_resource
+  /item/v2:
+    post:
+      tags:
+        - Item
+      responses:
+        '201':
+          description: Success
+          schema:
+            $ref: '#/definitions/ViewResponse'
+      parameters:
+        - required: true
+          in: body
+          name: payload
+          schema:
+            $ref: '#/definitions/Category Id'
+        - description: An optional fields mask
+          format: mask
+          type: string
+          name: X-Fields
+          in: header
+      operationId: post_view_category_v2_resource
+  /item/v2/category:
+    post:
+      tags:
+        - Item
+      responses:
+        '201':
+          description: Success
+          schema:
+            $ref: '#/definitions/ListResponse'
+      parameters:
+        - required: true
+          in: body
+          name: payload
+          schema:
+            $ref: '#/definitions/Biller Code'
+        - description: An optional fields mask
+          format: mask
+          type: string
+          name: X-Fields
+          in: header
+      operationId: post_list_category_v2_resource
+  /payment/cancel:
+    post:
+      tags:
+        - Payment
+      operationId: post_cancel_resource
+      responses:
+        '201':
+          description: Success
+          schema:
+            $ref: '#/definitions/CancelResponse'
+      parameters:
+        - required: true
+          in: body
+          name: payload
+          schema:
+            $ref: '#/definitions/CancelRequest'
+        - description: An optional fields mask
+          format: mask
+          type: string
+          name: X-Fields
+          in: header
+      summary: Payment cancellation
+  /payment/confirm:
+    post:
+      tags:
+        - Payment
+      responses:
+        '201':
+          description: Success
+          schema:
+            $ref: '#/definitions/ConfirmResponse'
+      parameters:
+        - required: true
+          in: body
+          name: payload
+          schema:
+            $ref: '#/definitions/ConfirmRequest'
+        - description: An optional fields mask
+          format: mask
+          type: string
+          name: X-Fields
+          in: header
+      operationId: post_confirm_resource
+  /payment/fee:
+    post:
+      tags:
+        - Payment
+      responses:
+        '201':
+          description: Success
+          schema:
+            $ref: '#/definitions/FeeResponse'
+      parameters:
+        - required: true
+          in: body
+          name: payload
+          schema:
+            $ref: '#/definitions/FeeRequest'
+        - description: An optional fields mask
+          format: mask
+          type: string
+          name: X-Fields
+          in: header
+      operationId: post_inquiry_resource
+  /payment/inquiry:
+    post:
+      tags:
+        - Payment
+      operationId: post_inquiry_resource
+      responses:
+        '201':
+          description: Success
+          schema:
+            $ref: '#/definitions/InquiryResponse'
+      parameters:
+        - required: true
+          in: body
+          name: payload
+          schema:
+            $ref: '#/definitions/InquiryRequest'
+        - description: An optional fields mask
+          format: mask
+          type: string
+          name: X-Fields
+          in: header
+      summary: Create a new inquiry
+  /payment/inquiry/single:
+    post:
+      tags:
+        - Payment
+      responses:
+        '201':
+          description: Success
+          schema:
+            $ref: '#/definitions/InquirySingleResponse'
+      parameters:
+        - required: true
+          in: body
+          name: payload
+          schema:
+            $ref: '#/definitions/InquiryRequest'
+        - description: An optional fields mask
+          format: mask
+          type: string
+          name: X-Fields
+          in: header
+      operationId: post_inquiry_single_resource
+  /payment/v2/confirm:
+    post:
+      tags:
+        - Payment
+      responses:
+        '201':
+          description: Success
+          schema:
+            $ref: '#/definitions/ConfirmV2Response'
+      parameters:
+        - required: true
+          in: body
+          name: payload
+          schema:
+            $ref: '#/definitions/ConfirmV2Request'
+        - description: An optional fields mask
+          format: mask
+          type: string
+          name: X-Fields
+          in: header
+      operationId: post_confirm_v2_resource
+  /payment/v2/inquiry:
+    post:
+      tags:
+        - Payment
+      responses:
+        '201':
+          description: Success
+          schema:
+            $ref: '#/definitions/InquiryV2Response'
+      parameters:
+        - required: true
+          in: body
+          name: payload
+          schema:
+            $ref: '#/definitions/InquiryV2Request'
+        - description: An optional fields mask
+          format: mask
+          type: string
+          name: X-Fields
+          in: header
+      operationId: post_inquiry_resource
+  /payment/v2/inquiry/single:
+    post:
+      tags:
+        - Payment
+      responses:
+        '201':
+          description: Success
+          schema:
+            $ref: '#/definitions/InquirySingleV2Response'
+      parameters:
+        - required: true
+          in: body
+          name: payload
+          schema:
+            $ref: '#/definitions/InquiryV2Request'
+        - description: An optional fields mask
+          format: mask
+          type: string
+          name: X-Fields
+          in: header
+      operationId: post_inquiry_single_resource
+  /payment/v2/verify:
+    post:
+      tags:
+        - Payment
+      responses:
+        '201':
+          description: Success
+          schema:
+            $ref: '#/definitions/VerifyV2Response'
+      parameters:
+        - required: true
+          in: body
+          name: payload
+          schema:
+            $ref: '#/definitions/VerifyV2Request'
+        - description: An optional fields mask
+          format: mask
+          type: string
+          name: X-Fields
+          in: header
+      operationId: post_verify_v2_resource
+  /payment/v3/inquiry:
+    post:
+      tags:
+        - Payment
+      responses:
+        '201':
+          description: Success
+          schema:
+            $ref: '#/definitions/InquiryV2Response'
+      parameters:
+        - required: true
+          in: body
+          name: payload
+          schema:
+            $ref: '#/definitions/InquiryV2Request'
+        - description: An optional fields mask
+          format: mask
+          type: string
+          name: X-Fields
+          in: header
+      operationId: post_inquiry_resource
+  /payment/v3/inquiry/single:
+    post:
+      tags:
+        - Payment
+      responses:
+        '201':
+          description: Success
+          schema:
+            $ref: '#/definitions/InquirySingleV2Response'
+      parameters:
+        - required: true
+          in: body
+          name: payload
+          schema:
+            $ref: '#/definitions/InquiryV2Request'
+        - description: An optional fields mask
+          format: mask
+          type: string
+          name: X-Fields
+          in: header
+      operationId: post_inquiry_single_resource
+  /payment/v4/inquiry:
+    post:
+      tags:
+        - Payment
+      responses:
+        '200':
+          description: Success
+      parameters:
+        - required: true
+          in: body
+          name: payload
+          schema:
+            $ref: '#/definitions/InquiryV2Request'
+      operationId: post_inquiry_resource
+  /payment/v4/inquiry/single:
+    post:
+      tags:
+        - Payment
+      responses:
+        '200':
+          description: Success
+      parameters:
+        - required: true
+          in: body
+          name: payload
+          schema:
+            $ref: '#/definitions/InquiryV2Request'
+      operationId: post_inquiry_single_resource
+  /payment/verify:
+    post:
+      tags:
+        - Payment
+      responses:
+        '201':
+          description: Success
+          schema:
+            $ref: '#/definitions/VerifyResponse'
+      parameters:
+        - required: true
+          in: body
+          name: payload
+          schema:
+            $ref: '#/definitions/VerifyRequest'
+        - description: An optional fields mask
+          format: mask
+          type: string
+          name: X-Fields
+          in: header
+      operationId: post_verify_resource
+  /qr/confirm:
+    post:
+      tags:
+        - QR
+      responses:
+        '200':
+          description: Success
+      parameters:
+        - required: true
+          in: body
+          name: payload
+          schema:
+            $ref: '#/definitions/QRConfirm'
+      operationId: post_qr_confirm_resource
+  /qr/inquiry:
+    post:
+      tags:
+        - QR
+      responses:
+        '200':
+          description: Success
+      parameters:
+        - required: true
+          in: body
+          name: payload
+          schema:
+            $ref: '#/definitions/Model'
+      operationId: post_qr_inquiry_resource
+definitions:
+  ConfirmV2Request:
+    type: object
+    properties:
+      payment_by:
+        type: string
+        description: Payment service name which listed in B24
+        example: ACLEDA XPay
+      customer_code:
+        type: string
+        description: Customer number
+        example: '1001000001'
+      note:
+        type: string
+        description: Payment note
+        example: This is payment note
+      bill_amount:
+        type: number
+        description: Can verify by total_amount or bill_amount
+        example: 15000
+      ref_no:
+        type: string
+        description: Reference number from bank
+        example: KVR1423R2424
+      payment_fee:
+        type: number
+      payment_account:
+        type: string
+        description: Payment account in which the channel used
+        example: 29875-30985-3983-21
+      bill_code:
+        type: string
+        description: Invoice number
+        example: '100100000001'
+      currency:
+        type: string
+        description: NULL - for all currencies
+        example: KHR
+      payment_channel:
+        type: string
+      payment_account_name:
+        type: string
+      payment_type:
+        default: full
+        type: string
+        description: full, partial, exceed
+        example: full
+      payment_account_phone_number:
+        type: string
+      payment_fee_charge_by:
+        default: '1'
+        type: string
+        description: 1=Customer, 2=Supplier
+        example: '1'
+      payment_token:
+        type: string
+        example: eyJhbGciOiJIUzI1NiIsImV4...
+      total_amount:
+        type: number
+        example: 16000
+  VerifyV2Request:
+    type: object
+    properties:
+      ref_no:
+        type: string
+        description: Reference number from bank
+        example: KVR1423R2424
+  InquirySingleV2Response:
+    type: object
+    properties:
+      message:
+        type: string
+        example: Bill found.
+      code:
+        type: string
+        example: SUCCESS
+      data:
+        $ref: '#/definitions/InquirySingleV2Response_Data'
+      message_kh:
+        type: string
+  InquiryResponse_Data_Ext:
+    type: object
+    properties: {}
+  FeeResponse_Data_PayoutAccounts:
+    type: object
+    properties:
+      account:
+        type: string
+        example: PL12345
+      amount:
+        type: number
+        example: 16000
+  Category Id:
+    required:
+      - category_id
+    type: object
+    properties:
+      category_id:
+        type: string
+        description: Category ID
+        example: C123456
+  InquirySingleResponse_Data_Customer:
+    type: object
+    properties:
+      code:
+        type: string
+        example: '1001000001'
+      id:
+        type: string
+        example: 85qQvNSj
+      name:
+        type: string
+        example: Rina
+  VerifyResponse_Data_Ext:
+    type: object
+    properties: {}
+  InquiryRequest:
+    type: object
+    properties:
+      bill_code:
+        type: string
+        description: Invoice number
+        example: '100100000001'
+      customer_code:
+        type: string
+        description: Customer number
+        example: '1001000001'
+      currency:
+        type: string
+        description: NULL - for all currencies
+        example: KHR
+  InquiryResponse_Data_Customer:
+    type: object
+    properties:
+      code:
+        type: string
+        example: '1001000001'
+      id:
+        type: string
+        example: 85qQvNSj
+      name:
+        type: string
+        example: Rina
+  InquirySingleResponse_Data_Supplier:
+    type: object
+    properties:
+      code:
+        type: string
+        example: '1668'
+      name:
+        type: string
+        example: Example Co., Ltd
+      short_name:
+        type: string
+        example: EX
+      allow_exceed_payment:
+        type: boolean
+        description: User can pay exceed or over due amount.
+        example: 'false'
+      allow_partial_payment:
+        type: boolean
+        description: User can pay less due amount.
+        example: 'true'
+      allow_edit_payment:
+        type: boolean
+        description: Allow user to edit payment amount.
+        example: 'true'
+  VerifyV2Response:
+    type: object
+    properties:
+      message:
+        type: string
+        example: Request found customer
+      code:
+        type: string
+        example: OK
+      data:
+        $ref: '#/definitions/VerifyResponse_Data'
+  FeeResponse_Data:
+    type: object
+    properties:
+      bill_amount:
+        type: number
+        example: 15000
+      fee_amount:
+        type: number
+        example: 1000
+      currency:
+        type: string
+        example: KHR
+      ext:
+        $ref: '#/definitions/InquiryResponse_Data_Ext'
+      payment_token:
+        type: string
+        example: eyJhbGciOiJIUzI1NiIsImV4cCI6MTUx...
+      payout_accounts:
+        items:
+          $ref: '#/definitions/FeeResponse_Data_PayoutAccounts'
+        type: array
+      total_amount:
+        type: number
+        example: 16000
+  CancelResponse_Data:
+    type: object
+    properties:
+      payment_id:
+        type: string
+        example: AHSVW48v
+      fee_amount:
+        type: number
+        example: 1000
+      currency:
+        type: string
+        example: KHR
+      bill_amount:
+        type: number
+        example: 15000
+      total_amount:
+        type: number
+        example: 16000
+  InquiryV2Response_Data_Supplier:
+    type: object
+    properties:
+      code:
+        type: string
+        example: '1668'
+      name:
+        type: string
+        example: Example Co., Ltd
+      short_name:
+        type: string
+        example: EX
+      sid:
+        type: string
+      did:
+        type: string
+      allow_partial_payment:
+        type: boolean
+        description: User can pay less due amount.
+        example: 'true'
+      allow_exceed_payment:
+        type: boolean
+        description: User can pay exceed or over due amount.
+        example: 'false'
+      mid:
+        type: string
+  ConfirmResponse_Data:
+    type: object
+    properties:
+      payment_by:
+        type: string
+        description: Payment channel name which listed in B24
+        example: ACLEDA XPay
+      customer_code:
+        type: string
+        description: Customer number
+        example: '3871000001'
+      total_amount:
+        type: number
+        description: Amount to pay
+        example: 16000
+      receipt_code:
+        type: string
+        description: Receipt number
+        example: RPT00000001
+      bill_amount:
+        type: number
+        description: Display amount on invoice
+        example: 15000
+      fee_amount:
+        type: number
+        description: Payment service fee
+        example: 1000
+      payment_fee:
+        type: number
+      ref_data:
+        type: string
+        example: '11111111111'
+      payment_account_name:
+        type: string
+      paid_to:
+        type: string
+        description: Biller name
+        example: ABC Store
+      ref_no:
+        type: string
+        description: Reference number from bank
+        example: KVR1423R2424
+      note:
+        type: string
+        description: Payment note
+        example: This is payment note
+      currency:
+        type: string
+        description: Currency
+        example: KHR
+      ext:
+        $ref: '#/definitions/ConfirmResponse_Data_Ext'
+      payment_channel:
+        type: string
+      paid_date:
+        type: string
+        description: Payment date
+        example: '2018-02-24'
+      payment_type:
+        default: full
+        type: string
+        description: full, partial, exceed
+        example: full
+      payment_account_phone_number:
+        type: string
+      payment_fee_charge_by:
+        type: string
+      payment_account:
+        type: string
+        description: Payment account in which the channel used
+        example: 29875-30985-3983-21
+      customer_name:
+        type: string
+        description: Customer name
+        example: Lee Hong
+  InquiryV2Response_Data_Customer:
+    type: object
+    properties:
+      name_en:
+        type: string
+        example: Rina
+      code:
+        type: string
+        example: '1001000001'
+      id:
+        type: string
+        example: 85qQvNSj
+      name:
+        type: string
+        example: Rina
+  InquiryResponse_Data_Balances:
+    type: object
+    properties:
+      remark:
+        type: string
+        description: Remark
+      image:
+        type: string
+        description: Category picture
+        example: https://example.com/images/C123456.jpg
+      description:
+        type: string
+        description: Description
+      id:
+        readOnly: true
+        type: string
+        description: Category ID
+        example: C123456
+      name:
+        type: string
+        description: Category name
+        example: PUBG
+  QRConfirm:
+    required:
+      - amount
+      - currency
+      - identity_code
+      - issuer_id
+      - issuer_name
+      - merchant_id
+      - ref_no
+    type: object
+    properties:
+      note:
+        type: string
+        description: Payment note
+        example: This is payment note
+      customer_code:
+        type: string
+        description: Customer code
+        example: '100100000001'
+      amount:
+        type: number
+        description: Can verify by total_amount or bill_amount
+        example: 15000
+      merchant_id:
+        type: string
+        description: xxx
+        example: '6070'
+      issuer_name:
+        type: string
+        description: Bank name
+        example: XYZ
+      currency:
+        type: string
+        description: NULL - for all currencies
+        example: KHR
+      customer_name:
+        type: string
+        description: Customer name
+        example: ABC
+      ref_no:
+        type: string
+        description: Reference number from bank
+        example: '64e64578'
+      issuer_id:
+        type: string
+        description: Bank ID
+        example: 6ba58888
+      identity_code:
+        type: string
+        description: Bill or Customer number
+        example: '100100000001'
+  FeeRequest:
+    type: object
+    properties:
+      amount:
+        type: number
+        example: 1000
+      payment_token:
+        type: string
+        example: eyJhbGciOiJIUzI1NiIsImV4cCI6MTUx...
+  VerifyResponse_Data:
+    type: object
+    properties:
+      customer_code:
+        type: string
+        example: '3871000001'
+      bill_amount:
+        type: number
+        example: 15000
+      paid_to:
+        type: string
+        example: ABC Store
+      currency:
+        type: string
+        example: KHR
+      payment_account_name:
+        type: string
+      payment_fee_charge_by:
+        default: '1'
+        type: string
+        description: 1=Customer, 2=Supplier
+        example: '1'
+      customer_name:
+        type: string
+        example: Lee Hong
+      payment_fee:
+        type: number
+      payment_channel:
+        type: string
+      receipt_code:
+        type: string
+        description: Receipt number
+        example: RPT00000001
+      total_amount:
+        type: number
+        example: 16000
+      fee_amount:
+        type: number
+        example: 1000
+      ext:
+        $ref: '#/definitions/VerifyResponse_Data_Ext'
+      paid_date:
+        type: string
+        example: '2018-02-24'
+      payment_account_phone_number:
+        type: string
+  ConfirmRequest:
+    type: object
+    properties:
+      payment_by:
+        type: string
+        description: Payment service name which listed in B24
+        example: ACLEDA XPay
+      customer_code:
+        type: string
+        description: Customer number
+        example: '1001000001'
+      bill_amount:
+        type: number
+        description: Can verify by total_amount or bill_amount
+        example: 15000
+      bill_code:
+        type: string
+        description: Invoice number
+        example: '100100000001'
+      currency:
+        type: string
+        description: NULL - for all currencies
+        example: KHR
+      payment_account:
+        type: string
+        description: Payment account in which the channel used
+        example: 29875-30985-3983-21
+      total_amount:
+        type: number
+        example: 16000
+      payment_token:
+        type: string
+        example: eyJhbGciOiJIUzI1NiIsImV4...
+      note:
+        type: string
+        description: Payment note
+        example: This is payment note
+      ref_no:
+        type: string
+        description: Reference number from bank
+        example: KVR1423R2424
+      payment_type:
+        default: full
+        type: string
+        description: full, partial, exceed
+        example: full
+  InquiryResponse_Data:
+    type: object
+    properties:
+      supplier:
+        $ref: '#/definitions/InquiryResponse_Data_Supplier'
+      customer:
+        $ref: '#/definitions/InquiryResponse_Data_Customer'
+      balances:
+        items:
+          $ref: '#/definitions/InquiryResponse_Data_Balances'
+        type: array
+  InquirySingleV2Response_Data:
+    type: object
+    properties:
+      supplier:
+        $ref: '#/definitions/InquirySingleV2Response_Data_Supplier'
+      customer:
+        $ref: '#/definitions/InquirySingleV2Response_Data_Customer'
+      balance:
+        $ref: '#/definitions/InquirySingleV2Response_Data_Balance'
+  InquirySingleResponse_Data_Balance:
+    type: object
+    properties:
+      payout1_account:
+        type: string
+        example: PL12345
+      fee_amount:
+        type: number
+        example: 1000
+      ext:
+        $ref: '#/definitions/InquiryResponse_Data_Ext'
+      payout2_account:
+        type: string
+        example: '09380980398039805'
+      payout1_amount:
+        type: number
+        example: 1000
+      bill_amount:
+        type: number
+        example: 15000
+      currency:
+        type: string
+        example: KHR
+      payout2_amount:
+        type: number
+        example: 15000
+      payment_token:
+        type: string
+        example: eyJhbGciOiJIUzI1NiIsImV4cCI6MTUx...
+      total_amount:
+        type: number
+        example: 16000
+  ViewResponse_Data_Item:
+    type: object
+    properties:
+      currency:
+        type: string
+        description: Currency
+        example: KHR
+      amount:
+        type: number
+        description: Item price
+        example: 16000
+      code:
+        type: string
+        description: Item code
+        example: I123456
+      group:
+        type: string
+        description: Group
+      name:
+        type: string
+        description: Item name
+        example: PUBG
+      amount_before_discount:
+        type: number
+        description: Item price
+        example: 16000
+      image:
+        type: string
+        description: Item picture
+        example: https://example.com/images/I123456.jpg
+      remark:
+        type: string
+        description: Remark
+      description:
+        type: string
+        description: Description
+  VerifyResponse:
+    type: object
+    properties:
+      message:
+        type: string
+        example: Request found customer
+      code:
+        type: string
+        example: OK
+      data:
+        $ref: '#/definitions/VerifyResponse_Data'
+  InquiryResponse_Data_Supplier:
+    type: object
+    properties:
+      code:
+        type: string
+        example: '1668'
+      name:
+        type: string
+        example: Example Co., Ltd
+      short_name:
+        type: string
+        example: EX
+      sid:
+        type: string
+      did:
+        type: string
+      allow_partial_payment:
+        type: boolean
+        description: User can pay less due amount.
+        example: 'true'
+      allow_exceed_payment:
+        type: boolean
+        description: User can pay exceed or over due amount.
+        example: 'false'
+      mid:
+        type: string
+  InquirySingleV2Response_Data_Customer:
+    type: object
+    properties:
+      phone:
+        type: string
+      name_en:
+        type: string
+        example: Rina
+      code:
+        type: string
+        example: '1001000001'
+      id:
+        type: string
+        example: 85qQvNSj
+      name:
+        type: string
+        example: Rina
+  CancelRequest:
+    type: object
+    properties:
+      note:
+        type: string
+        example: This is reason to cancel.
+      currency:
+        type: string
+        example: KHR
+      total_amount:
+        type: number
+        example: 16000
+      ref_no:
+        type: string
+        description: Reference number from bank
+        example: KVR1423R2424
+  ListResponse:
+    type: object
+    properties:
+      message_kh:
+        type: string
+        description: Response message in Khmer
+        example: Bill found.
+      message:
+        type: string
+        description: Response message
+        example: Bill found.
+      code:
+        type: string
+        description: Response code
+        example: SUCCESS
+      data:
+        items:
+          $ref: '#/definitions/InquiryResponse_Data_Balances'
+        type: array
+  ViewResponse:
+    type: object
+    properties:
+      message_kh:
+        type: string
+        description: Response message in Khmer
+        example: Bill found.
+      message:
+        type: string
+        description: Response message
+        example: Item Found
+      code:
+        type: string
+        description: Response code
+        example: SUCCESS
+      data:
+        $ref: '#/definitions/ViewResponse_Data'
+  VerifyRequest:
+    type: object
+    properties:
+      ref_no:
+        type: string
+        description: Reference number from bank
+        example: KVR1423R2424
+  InquiryV2Response_Data_Balances:
+    type: object
+    properties:
+      charge_type:
+        type: string
+      last_due_date:
+        type: string
+      bill_amount:
+        type: number
+        example: 15000
+      max_amount:
+        type: number
+        example: 16000
+      last_bills:
+        items:
+          $ref: '#/definitions/LastBillModel'
+        type: array
+      customer_fee_percentage:
+        type: integer
+      min_amount:
+        type: number
+        example: 16000
+      fee_type:
+        type: string
+        example: tier
+      currency:
+        type: string
+        example: KHR
+      fee_amount:
+        type: number
+        example: 1000
+      last_pay_date:
+        type: string
+      supplier_fee_percentage:
+        type: integer
+      last_bill_date:
+        type: string
+      balance:
+        type: number
+        example: -20000
+      payment_token:
+        type: string
+        example: eyJhbGciOiJIUzI1NiIsImV4cCI6MTUx...
+      opening_balance:
+        type: number
+      total_amount:
+        type: number
+        example: 16000
+  InquirySingleV2Response_Data_Balance:
+    type: object
+    properties:
+      charge_type:
+        type: string
+      payout1_account:
+        type: string
+        example: PL12345
+      last_pay_date:
+        type: string
+      payout2_account:
+        type: string
+        example: '09380980398039805'
+      last_due_date:
+        type: string
+      bill_amount:
+        type: number
+        example: 15000
+      max_amount:
+        type: number
+        example: 16000
+      customer_fee_percentage:
+        type: integer
+      min_amount:
+        type: number
+        example: 16000
+      last_bills:
+        items:
+          $ref: '#/definitions/LastBillModel'
+        type: array
+      currency:
+        type: string
+        example: KHR
+      fee_amount:
+        type: number
+        example: 1000
+      ext:
+        $ref: '#/definitions/InquiryResponse_Data_Ext'
+      supplier_fee_percentage:
+        type: integer
+      payout1_amount:
+        type: number
+        example: 1000
+      payout2_amount:
+        type: number
+        example: 15000
+      last_bill_date:
+        type: string
+      balance:
+        type: number
+        example: -20000
+      payment_token:
+        type: string
+        example: eyJhbGciOiJIUzI1NiIsImV4cCI6MTUx...
+      opening_balance:
+        type: number
+      total_amount:
+        type: number
+        example: 16000
+  Model:
+    required:
+      - identity_code
+      - merchant_id
+    type: object
+    properties:
+      merchant_id:
+        type: string
+        description: xxx
+        example: '6070'
+      identity_code:
+        type: string
+        description: Bill or Customer number
+        example: '100100000001'
+  LastBillModel:
+    type: object
+    properties:
+      total_due_amount:
+        type: number
+      bill_amount:
+        type: number
+      paid_amount:
+        type: number
+      bill_date:
+        type: string
+  ConfirmResponse:
+    type: object
+    properties:
+      message:
+        type: string
+        example: Payment success.
+      code:
+        type: string
+        example: SUCCESS
+      data:
+        $ref: '#/definitions/ConfirmResponse_Data'
+  InquiryV2Request:
+    type: object
+    properties:
+      bill_code:
+        type: string
+        description: Invoice number
+        example: '100100000001'
+      customer_code:
+        type: string
+        description: Customer number
+        example: '1001000001'
+      currency:
+        type: string
+        description: NULL - for all currencies
+        example: KHR
+  CancelResponse:
+    type: object
+    properties:
+      message:
+        type: string
+        example: Cancel payment transaction success.
+      code:
+        type: string
+        example: SUCCESS
+      data:
+        $ref: '#/definitions/CancelResponse_Data'
+  InquiryV2Response:
+    type: object
+    properties:
+      message:
+        type: string
+        example: Bill found.
+      code:
+        type: string
+        example: SUCCESS
+      data:
+        $ref: '#/definitions/InquiryV2Response_Data'
+      message_kh:
+        type: string
+  ConfirmResponse_Data_Ext:
+    type: object
+    properties: {}
+  InquirySingleResponse:
+    type: object
+    properties:
+      message:
+        type: string
+        example: Bill found.
+      code:
+        type: string
+        example: SUCCESS
+      data:
+        $ref: '#/definitions/InquirySingleResponse_Data'
+  ViewResponse_Data:
+    type: object
+    properties:
+      item:
+        items:
+          $ref: '#/definitions/ViewResponse_Data_Item'
+        type: array
+      image:
+        type: string
+        description: Category picture
+        example: https://example.com/images/C123456.jpg
+      category_id:
+        type: string
+        description: Category ID
+        example: C123456
+      category_name:
+        type: string
+        description: Category name
+        example: PUBG
+  ConfirmV2Response:
+    type: object
+    properties:
+      message_kh:
+        type: string
+        example: ជោគជ័យ
+      message:
+        type: string
+        example: Payment success.
+      code:
+        type: string
+        example: SUCCESS
+      data:
+        $ref: '#/definitions/ConfirmResponse_Data'
+  FeeResponse:
+    type: object
+    properties:
+      message_kh:
+        type: string
+      message:
+        type: string
+        example: Recalculated.
+      code:
+        type: string
+        example: SUCCESS
+      data:
+        $ref: '#/definitions/FeeResponse_Data'
+  Biller Code:
+    required:
+      - biller_code
+    type: object
+    properties:
+      biller_code:
+        type: string
+        description: Biller code
+        example: '6070'
+  InquiryV2Response_Data:
+    type: object
+    properties:
+      supplier:
+        $ref: '#/definitions/InquiryV2Response_Data_Supplier'
+      customer:
+        $ref: '#/definitions/InquiryV2Response_Data_Customer'
+      balances:
+        items:
+          $ref: '#/definitions/InquiryV2Response_Data_Balances'
+        type: array
+  InquiryResponse:
+    type: object
+    properties:
+      message:
+        type: string
+        example: Bill found.
+      code:
+        type: string
+        example: SUCCESS
+      data:
+        $ref: '#/definitions/InquiryResponse_Data'
+  InquirySingleResponse_Data:
+    type: object
+    properties:
+      supplier:
+        $ref: '#/definitions/InquirySingleResponse_Data_Supplier'
+      customer:
+        $ref: '#/definitions/InquirySingleResponse_Data_Customer'
+      balance:
+        $ref: '#/definitions/InquirySingleResponse_Data_Balance'
+  InquirySingleV2Response_Data_Supplier:
+    type: object
+    properties:
+      code:
+        type: string
+        example: '1668'
+      name:
+        type: string
+        example: Example Co., Ltd
+      short_name:
+        type: string
+        example: EX
+      sid:
+        type: string
+      did:
+        type: string
+      allow_partial_payment:
+        type: boolean
+        description: User can pay less due amount.
+        example: 'true'
+      allow_exceed_payment:
+        type: boolean
+        description: User can pay exceed or over due amount.
+        example: 'false'
+      mid:
+        type: string
+responses:
+  MaskError:
+    description: When any error occurs on mask
+  ParseError:
+    description: When a mask can't be parsed
+securityDefinitions:
+  token:
+    type: apiKey
+    name: token
+    in: header
+
+# paths:
+#   /users/{username}:
+#     $ref: paths/users_{username}.yaml
+#   /echo:
+#     $ref: paths/echo.yaml
+#   /pathItem:
+#     $ref: paths/pathItem.yaml
+#   /pathItemWithExamples:
+#     $ref: paths/pathItemWithExamples.yaml
+# components:
+#   securitySchemes:
+#     main_auth:
+#       type: oauth2
+#       flows:
+#         implicit:
+#           authorizationUrl: http://example.com/api/oauth/dialog
+#           scopes:
+#             read:users: read users info
+#             write:users: modify or remove users
+#     api_key:
+#       type: apiKey
+#       in: header
+#       name: api_key
+#     basic_auth:
+#       type: http
+#       scheme: basic
