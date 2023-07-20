@@ -38,6 +38,7 @@ info:
     implementation logic. Similar to what
     interfaces have done for lower-level programming, OpenAPI removes the
     guesswork in calling the service.
+    Hi 
 tags:
   - name: Echo
     description: Example echo operations.
