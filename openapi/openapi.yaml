@@ -114,7 +114,6 @@ paths:
     $ref: paths/confirm.yaml
   /get:
     $ref: paths/test.yaml
-  /<h2>HTTP 2XX status codes</h2>:
 components:
   securitySchemes:
     main_auth:
