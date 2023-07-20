@@ -39,13 +39,13 @@ info:
     interfaces have done for lower-level programming, OpenAPI removes the
     guesswork in calling the service.
     Hi 
-tags:
-  - name: Echo
-    description: Example echo operations.
-  - name: User
-    description: Operations about users.
-  - name: Tag
-    description: This is a tag description.
+# tags:
+#   - name: Echo
+#     description: Example echo operations.
+#   - name: User
+#     description: Operations about users.
+#   - name: Tag
+#     description: This is a tag description.
 servers:
   - url: https://{bankapi-demo.bill24.net}payment/inquiry
     variables:
