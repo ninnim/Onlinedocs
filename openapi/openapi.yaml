@@ -131,7 +131,6 @@ components:
       scheme: basic
 
 description: >    
-  #Status Codes
-
-  <h2>HTTP 2XX status codes</h2>
+    #Status Codes
+    <h2>HTTP 2XX status codes</h2>
 
