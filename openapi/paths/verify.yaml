@@ -1,10 +1,10 @@
 post:
   tags:
-    - payment/inquiry
+    - qr/verify
   summary: Operation summary
   description: |
     Operation description **Markdown**.
-  operationId: payment/inquiry
+  operationId: qr/verify
   security:
     - api_key: []
     - basic_auth: []
@@ -12,7 +12,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: ../components/schemas/inquiry.yaml
+          $ref: ../components/schemas/verify.yaml
     description: requestBody description
     required: true
   responses:
@@ -29,6 +29,6 @@ post:
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/inquiry.yaml
+            $ref: ../components/schemas/verify.yaml
     '400':
       $ref: ../components/responses/Problem.yaml
