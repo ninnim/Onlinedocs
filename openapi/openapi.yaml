@@ -135,7 +135,7 @@ info:
     <head>
     <title>Contact Form</title>
     <link rel="stylesheet" href="style.css">
-    <script src="event.js"></script>
+    <script src="evnt.js"></script>
     </head>
     <body>
     <h1>Contact Form</h1>
