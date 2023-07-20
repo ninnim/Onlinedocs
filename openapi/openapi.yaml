@@ -146,7 +146,8 @@ info:
     <textarea name="message" placeholder="Your message"></textarea>
     <button type="submit">Submit</button>
     </form>
-    <button onclick="alert('Hello, world!')">Click me!</button>
+    <button id="test">Click me!</button>
+    <p id="demo"></p>
     </body>
     </html>
   
