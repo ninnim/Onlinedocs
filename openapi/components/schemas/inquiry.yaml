@@ -1,0 +1,17 @@
+type: object
+properties:
+  bill_code:
+    description: invoice code or bill code
+    type: string
+    minLength: 4
+    example: 2035-333333
+  customer_code:
+    description: custoemr code or customer id
+    type: string
+    minLength: 1
+    example: 2035-333333
+  currency:
+    description: KHR/USD
+    type: string
+    minLength: 1
+    example: KHR
