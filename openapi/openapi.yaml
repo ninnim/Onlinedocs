@@ -46,12 +46,12 @@ tags:
   - name: Tag
     description: This is a tag description.
 servers:
-  - url: https://{tenant}/api/v1
+  - url: https://{bankapi-demo.bill24.net}/payment/inquiry
     variables:
       tenant:
         default: www
         description: Your tenant id
-  - url: https://jsonplaceholder.typicode.com/albums
+  - url: https://bankapi-demo.bill24.net
 paths:
   /users/{username}:
     $ref: paths/users_{username}.yaml
