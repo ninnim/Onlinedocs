@@ -17,7 +17,7 @@ properties:
     example: USD
   amount:
     description: amount of transaction
-    type: decimal
+    type: integer
     minLength: 1
     example: 10.20
   note:
