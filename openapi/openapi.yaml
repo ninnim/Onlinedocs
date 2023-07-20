@@ -41,8 +41,11 @@ info:
     To get started with KHQR payment integration you need to follow of step that involve understanding the API's functionality, authentication, making request, handle response.
 
     <h2>Overview</h2>
+    
 
     ![](https://1508556034-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FcjUxrV0MGUtgNMQS2hBJ%2Fuploads%2F9OWc1BKQsiR8LuRosCTS%2FKHQR%20Workflow%20Diagram%20v3.jpg?alt=media&token=f41eec7a-83d4-46f6-9b57-bb9723178483)
+
+
 
     
     1.Consumer open Bank app and scan **KHQR** code in the invoice.
