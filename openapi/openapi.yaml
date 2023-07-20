@@ -53,7 +53,7 @@ servers:
         description: Your tenant id
   - url: https://bankapi-demo.bill24.net
 paths:
-  /inquiry:
+  /payment/inquiry:
     $ref: paths/inquiry.yaml
   /echo:
     $ref: paths/echo.yaml
