@@ -13,8 +13,8 @@ form {
   margin: 0 auto;
   padding: 20px;
   background-color: #f0f0f0;
-  border: 1px solid #07267d;
-  border-radius: 20px;
+  border: 1px solid #000000;
+  border-radius: 5px;
 }
 
 input {
