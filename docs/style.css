@@ -14,13 +14,14 @@ form {
   padding: 20px;
   background-color: #f0f0f0;
   border: 1px solid #07267d;
-  border-radius: 25px;
+  border-radius: 20px;
 }
 
 input {
   width: 100%;
   padding: 10px;
   border: 1px solid #a80c0c;
+  border-radius: 20px;
   margin-bottom: 10px;
 }
 
@@ -36,6 +37,7 @@ button {
   background-color: #000000;
   color: #19c65e;
   font-size: 16px;
-  border: round;
+  border: none;
+  border-radius: 10px;
   cursor: pointer;
 }
