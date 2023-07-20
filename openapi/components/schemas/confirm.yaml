@@ -1,0 +1,43 @@
+type: object
+properties:
+  khqr_string:
+    description: khr string generate by merchant
+    type: string
+    minLength: 4
+    example: 000201010212303400zmkbkhppxxx@amkb01032340203AMK520449005802KH5916សហ#$សស%ហ&eថ ក6010Phnom Penh540820400.0053031165502025603400622305092340005450706Bill2463044C97
+  ref_no:
+    description: bank reference or transaction id
+    type: string
+    minLength: 1
+    example: 1122dddd
+  currency:
+    description: KHR / USD
+    type: string
+    minLength: 1
+    example: USD
+  amount:
+    description: amount of transaction
+    type: decimal
+    minLength: 1
+    example: 10.20
+  note:
+    type: string
+    example: test
+  issuer_id:
+    description: id of issuing bank
+    type: string
+    minLength: 1
+    example: issuingbank@bank
+  issuer_name:
+    description: name of issuing bank
+    type: string
+    minLength: 1
+    example: ACLEDA
+  khqr_hash:
+    description: khqr hash
+    type: string
+    minLength: 1
+    example: b900f87b
+
+    
+    

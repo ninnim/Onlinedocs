@@ -65,6 +65,8 @@ paths:
     $ref: paths/inquiry.yaml
   /qr/verify:
     $ref: paths/verify.yaml
+  /qr/v2/confirm:
+    $ref: paths/confirm.yaml
 components:
   securitySchemes:
     main_auth:
