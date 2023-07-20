@@ -126,9 +126,6 @@ info:
     <input type="submit" value="Register Token">
     </form> 
   
-    <script>
-    alert("sddd")
-    </script>
 
 
 
