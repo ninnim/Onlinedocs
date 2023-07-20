@@ -1,10 +1,10 @@
 post:
   tags:
-    - inquiry
+    - payment/inquiry
   summary: Operation summary
   description: |
     Operation description **Markdown**.
-  operationId: inquiry
+  operationId: payment/inquiry
   security:
     - api_key: []
     - basic_auth: []
