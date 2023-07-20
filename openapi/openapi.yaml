@@ -86,9 +86,9 @@ info:
 
     |---|---|
 
-    | <font style="color:blue">**200**</font> OK | The request succeed. |
+    | <font style="color:#80ff80">**200**</font> OK | The request succeed. |
 
-    | **201** Created | The request succeed and a resource was created. |
+    | <font style="color:#80ff80">**201**</font> Created | The request succeed and a resource was created. |
 
 
 
