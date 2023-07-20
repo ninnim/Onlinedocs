@@ -82,5 +82,7 @@ components:
     api_key:
       type: apiKey
       in: header
-      name: api_key
-
+      name: token
+    basic_auth:
+      type: http
+      scheme: basic
