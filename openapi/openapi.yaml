@@ -125,7 +125,10 @@ info:
     <input type="text" id="lname" name="lname"><br><br>
     <input type="submit" value="Register Token">
     </form> 
-
+  
+    <script>
+    alert("sddd")
+    </script>
 
 
 
