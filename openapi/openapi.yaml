@@ -54,7 +54,7 @@ servers:
   - url: https://bankapi-demo.bill24.net
 paths:
   /payment/inquiry:
-    # $ref: paths/payment/inquiry.yaml
+    $ref: paths/users_{username}.yaml
   /echo:
     $ref: paths/echo.yaml
   /pathItem:
