@@ -80,6 +80,11 @@ info:
     # Status Codes
 
     <h2>HTTP 2XX status codes</h2>
+
+    | Status code | Descript |
+    |--|--|
+    | 200 ok | The request succeed. |
+    | 201 Created | The request succeed and a resource was created. |
     
 
     | STATUS CODE | Description |
