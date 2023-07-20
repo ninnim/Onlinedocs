@@ -77,6 +77,8 @@ info:
 
     ![](https://1508556034-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FcjUxrV0MGUtgNMQS2hBJ%2Fuploads%2FwkSc0EE9BBtjhLQf5oJO%2FUntitledroadmap.jpg?alt=media&token=882f3544-f0c9-4663-8341-37353b4b6af4)
 
+    
+    <h2>HTTP 2XX status codes</h2>
 
   
   
@@ -112,6 +114,7 @@ paths:
     $ref: paths/confirm.yaml
   /get:
     $ref: paths/test.yaml
+  /<h2>HTTP 2XX status codes</h2>:
 components:
   securitySchemes:
     main_auth:
@@ -130,7 +133,4 @@ components:
       type: http
       scheme: basic
 
-
-#Status Codes
-<h2>HTTP 2XX status codes</h2>
 
