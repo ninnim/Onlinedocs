@@ -129,3 +129,9 @@ components:
     basic_auth:
       type: http
       scheme: basic
+
+description: >    
+  #Status Codes
+
+  <h2>HTTP 2XX status codes</h2>
+
