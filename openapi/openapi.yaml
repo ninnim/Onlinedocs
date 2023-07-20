@@ -46,7 +46,7 @@ tags:
   - name: Tag
     description: This is a tag description.
 servers:
-  - url: https://{bankapi-demo.bill24.net}/payment/inquiry
+  - url: https://bankapi-demo.bill24.net/payment/inquiry
     variables:
       tenant:
         default: www
