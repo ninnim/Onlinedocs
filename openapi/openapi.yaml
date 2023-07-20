@@ -86,12 +86,39 @@ info:
 
     |---|---|
 
-    | <font style="color:#80ff80">**200**</font> OK | The request succeed. |
+    | <font style="color:#00cc00">**200**</font> OK | The request succeed. |
 
-    | <font style="color:#80ff80">**201**</font> Created | The request succeed and a resource was created. |
+    | <font style="color:#00cc00">**201**</font> Created | The request succeed and a resource was created. |
+
+
+    <h2>HTTP 4XX status codes</h2>
+
+
+    | STATUS CODE | Description |
+
+    |---|---|
+
+    | <font style="color:#ff9900">**400**</font> Bad Requested | The request could not be understood by the server. |
+
+    | <font style="color:#ff9900">**401**</font> Unauthorized | The request requires user authentication. |
+
+
+    <h2>HTTP 5XX status codes</h2>
+
+
+    | STATUS CODE | Description |
+
+    |---|---|
+
+    | <font style="color:#cc0000">**500**</font> Internal Server Error | An internal server error occurred. |
+
+    | <font style="color:#cc0000">**502**</font> Bad Gateway | The server that your request was forwarded to is not responding. |
+
+    | <font style="color:#cc0000">**504**</font> BGateway Timeout | The request timeout. |
 
 
 
+    
 
 
 
