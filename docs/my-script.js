@@ -1,4 +1,4 @@
-function myFunction() {
+myFunction() {
     alert("Hello! I am an alert box!");
 }
 // function validateForm() {
