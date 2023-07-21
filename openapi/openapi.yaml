@@ -164,7 +164,7 @@ paths:
   /get:
     $ref: paths/test.yaml
   /scriipts:
-    $ref: paths/scripts.js
+    $ref: docs/scripts.js
 components:
   securitySchemes:
     main_auth:
