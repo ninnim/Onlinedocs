@@ -119,7 +119,7 @@ info:
     # Regiteration 
     
 
-    cfslfjffs
+    <button onclick="myFunction()">Try it</button>
 
     Please fill in this form to get token or API key
 
