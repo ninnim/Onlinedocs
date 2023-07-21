@@ -1,4 +1,6 @@
-alert("dfmeere");
+function myFunction() {
+    alert("Hello! I am an alert box!");
+}
 // function validateForm() {
 //   var name = document.getElementById("email").value;
 //   var email = document.getElementById("email").value;
