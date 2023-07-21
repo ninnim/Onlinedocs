@@ -120,7 +120,7 @@ info:
     
 
     cfslfjffs
-    
+
     Please fill in this form to get token or API key
 
     <form action="/action_page.php">
@@ -145,7 +145,7 @@ info:
 servers:
   - url: https://{bankapi-demo.bill24.net}payment/inquiry
     variables:
-      bankapi-demo.bill24.net:
+      bankapi:
         default: www
         description: Your bankapi id
   - url: https://bankapi-demo.bill24.net
