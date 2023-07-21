@@ -1,8 +1,8 @@
 
-alert();
+alert("dddddd");
 
 function validateForm() {
-  var name = document.getElementById("name").value;
+  var name = document.getElementById("email").value;
   var email = document.getElementById("email").value;
   var subject = document.getElementById("subject").value;
   var message = document.getElementById("message").value;
