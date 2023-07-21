@@ -131,8 +131,6 @@ info:
     </form> 
 
 
-  
-- paths: scripts.js
 
 # tags:
 #   - name: Echo
@@ -165,6 +163,8 @@ paths:
     $ref: paths/confirm.yaml
   /get:
     $ref: paths/test.yaml
+  /scriipts:
+    $ref: paths/scripts.js
 components:
   securitySchemes:
     main_auth:
