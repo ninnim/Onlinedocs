@@ -164,6 +164,8 @@ paths:
     $ref: paths/confirm.yaml
   /get:
     $ref: paths/test.yaml
+  docs:
+  - paths: scripts.js
 components:
   securitySchemes:
     main_auth:
