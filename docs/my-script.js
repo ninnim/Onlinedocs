@@ -1,4 +1,4 @@
-alert("Test6");
+// alert("Test6");
 function myFunction() {
     alert("Hello! I am an alert box!");
   };
