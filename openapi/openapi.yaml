@@ -132,8 +132,7 @@ info:
 
 
   
-  docs:
-   - paths: scripts.js
+- paths: scripts.js
 
 # tags:
 #   - name: Echo
