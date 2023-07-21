@@ -1,2 +1,1 @@
-scripts:
-  - path: my-script.js
+scripts: my-script.js
