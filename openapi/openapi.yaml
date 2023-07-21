@@ -143,7 +143,7 @@ info:
 #   - name: Tag
 #     description: This is a tag description.
 servers:
-  - url: https://{bankapi-demo.bill24.net}payment/inquiry
+  - url: https://{bankapi}
     variables:
       bankapi:
         default: www
