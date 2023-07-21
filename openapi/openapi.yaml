@@ -125,11 +125,11 @@ info:
 
     <form action="/action_page.php">
     <label for="fname">Bank name:</label><br>
-    <input type="text" id="fname" Bank name="fname"><br>
+    <input type="text" name="bankname"><br>
     <label for="lname">Email:</label><br>
-    <input type="text" id="lname" name="lname"><br><br>
+    <input type="email" name="email"><br><br>
     <label for="lname">Phone:</label><br>
-    <input type="text" id="lname" name="lname"><br><br>
+    <input type="number" name="phone"><br><br>
     <button type="submit">Register</button>
     </form> 
 

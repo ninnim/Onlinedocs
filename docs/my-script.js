@@ -1,12 +1,12 @@
-alert("Test3");
+alert("Test4");
 function myFunction() {
     alert("Hello! I am an alert box!");
   };
-  
+
 function validateForm() {
-  var name = document.getElementById("name").value;
+  var name = document.getElementById("bankname").value;
   var email = document.getElementById("email").value;
-  var subject = document.getElementById("subject").value;
+  var phone = document.getElementById("phone").value;
   var message = document.getElementById("message").value;
 
   if (name == "") {
@@ -19,8 +19,8 @@ function validateForm() {
     return false;
   }
 
-  if (subject == "") {
-    alert("Please enter a subject.");
+  if (phone == "") {
+    alert("Please enter a phone number.");
     return false;
   }
 
