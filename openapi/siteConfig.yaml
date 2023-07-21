@@ -1,2 +1,2 @@
 scripts:
-  - docs: my-script.js
+  - scripts: my-script.js
