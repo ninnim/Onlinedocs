@@ -1,6 +1,4 @@
 
-// alert("dddddd")
-
 function validateForm() {
   var name = document.getElementById("email").value;
   var email = document.getElementById("email").value;
