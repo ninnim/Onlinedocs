@@ -21,4 +21,4 @@ theme:
         - lang: PHP
         - lang: Python
 typography:
-  fontFamily: "Lumanosimo"
+  fontFamily: "Roboto"
