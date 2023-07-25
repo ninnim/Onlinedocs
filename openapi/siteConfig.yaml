@@ -1,1 +1,1 @@
-scripts: bootstrap.bundle.min.js
+scripts: ../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js
