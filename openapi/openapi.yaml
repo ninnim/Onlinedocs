@@ -19,7 +19,7 @@ info:
 
 
     
-  <div class="container">
+    <div class="container">
 
       <div class="accordion" id="accordionExample">
     <div class="accordion-item">
@@ -61,7 +61,6 @@ info:
     </div>
   
 
-    # Introduction
 
     <b><font style="color:red">KHQR</font> Payment</b> is a service to allowing banks integration through REST API,
     It uses resource URLs with communication-both requests and responses relies on JSON-encoded format.
