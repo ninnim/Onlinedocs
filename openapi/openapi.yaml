@@ -3,8 +3,8 @@ info:
   version: 1.0.0
   title: KHQR Payment
   typography:
-  fontFamily: "Helvetica Neue"
-  
+    fontFamily: "Helvetica Neue"
+
   # termsOfService: https://example.com/terms/
   contact:
     email: contact@example.com
