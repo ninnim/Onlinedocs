@@ -20,3 +20,5 @@ theme:
         - lang: JavaScript
         - lang: PHP
         - lang: Python
+typography:
+  fontFamily: "Lumanosimo"
