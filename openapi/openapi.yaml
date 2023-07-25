@@ -11,7 +11,7 @@ info:
   #   url: http://www.apache.org/licenses/LICENSE-2.0.html
   # x-logo:
   #   # url: LOGO.png
-  
+  <link rel="stylesheet" href="main.css">
   description: >
     This is an **example** API to demonstrate features of the OpenAPI
     specification.
